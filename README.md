@@ -22,6 +22,10 @@ So to change to add a custom port number, for example, you'll need to enter:
  ```bash
 localhost:<port>/sentiment/tweet=<tweet-text>
  ```
+ For example:
+ ```bash
+localhost:3000/sentiment/tweet=Nothing can take me away from my love of cheese
+ ```
  
  
  ## Important Links
