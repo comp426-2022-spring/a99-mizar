@@ -18,6 +18,12 @@ So to change to add a custom port number, for example, you'll need to enter:
  npm run server -- --port=<NUMBER>
  ```
  
+ Use sentiment anaylsis (rudimentary for now). Go to this link in your browser:
+ ```bash
+localhost:<port>/sentiment/tweet=<tweet-text>
+ ```
+ 
+ 
  ## Important Links
  - [sentiment](https://www.npmjs.com/package/sentiment#how-it-works)
 
