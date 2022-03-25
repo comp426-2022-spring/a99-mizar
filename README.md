@@ -1,5 +1,25 @@
 # a99 Final Project
+## How to use
+In the package.json file, you'll see our dependencies and a script that runs the backend server using nodemon.
 
+Install dependencies:
+```bash
+npm install
+ ```
+ 
+ Run server:
+ This defaults to port 5000, as you'll see in server.js. 
+  ```bash
+ npm run server
+ ```
+But in order to pass an argument using an npm script (i.e., 'server' in 'npm run server'), you need to add two dashes ' -- ' and then your arguments.
+So to change to add a custom port number, for example, you'll need to enter:
+  ```bash
+ npm run server -- --port=<NUMBER>
+ ```
+
+
+## --- Project Instructions ---
 ## UPDATE
 
 You don't need to accept this assignment since you are already assigned to teams. So, there is not assignment invite link for a99.
