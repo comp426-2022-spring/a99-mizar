@@ -17,6 +17,9 @@ So to change to add a custom port number, for example, you'll need to enter:
   ```bash
  npm run server -- --port=<NUMBER>
  ```
+ 
+ ## Important Links
+ - [sentiment](https://www.npmjs.com/package/sentiment#how-it-works)
 
 
 ## --- Project Instructions ---
