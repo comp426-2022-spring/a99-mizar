@@ -1,21 +1,18 @@
+import { Routes, Route } from 'react-router-dom';
+import Login from './Login.js';
+import Home from './Home.js';
 import '../css/App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <nav className='Nav'>
+        a99 - Team Mizar
+      </nav>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+      </Routes>
     </div>
   );
 }
