@@ -6,16 +6,23 @@ Install dependencies:
 ```bash
 npm install
  ```
- 
+
  Run server:
- This defaults to port 5000, as you'll see in server.js. 
+ This defaults to port 3000, as you'll see in server.js. 
   ```bash
- npm run server
+  cd backend/
+  npm run server
  ```
-But in order to pass an argument using an npm script (i.e., 'server' in 'npm run server'), you need to add two dashes ' -- ' and then your arguments.
-So to change to add a custom port number, for example, you'll need to enter:
+
+ Run client:
   ```bash
- npm run server -- --port=<NUMBER>
+  cd client/
+  npm run start
+ ```
+
+If you need to define a different port because 3000 is in use, for example port 3002, you'll need to enter:
+  ```bash
+ npm run server -- --port=<3002>
  ```
  
  Use sentiment anaylsis (rudimentary for now). Go to this link in your browser:
