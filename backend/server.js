@@ -19,6 +19,8 @@ const server = app.listen(port, () => {
   console.log(`App is running on ${port}`)
 })
 
+app.set('json spaces', 2)
+
 app.get("/", (req, res) => {
   console.log("hello")
   // Respond with status 200
@@ -38,24 +40,33 @@ app.get("/sentiment/:tweet", (req, res) => {
   res.status(200).header({ "Content-Type": "text/json" }).json({ tweet: tweet, sentiment: result })
 })
 
-app.get("/toptweets/", async (req, res) => {
+app.get("/allCovidTweets/", async (req, res) => {
   // Instanciate with desired auth type (here's Bearer v2 auth)
   const twitterClient = new TwitterApi(TWITTER_BEARER_TOKEN);
 
-  // let query = 'from:twitterapi since:2011-06-20 until:2011-06-20'
-  const jsTweets = await twitterClient.readOnly.v2.search('covid');
+  const searchTerms = ["COVID", "COVID-19", "virus", "outbreak", "pandemic", "quarantine", "symptom", "spread", "social distancing", "vaccine", "immunity", "case", "contagious", "infectious"]
+  const covidTweets = {}
 
 
+  for (let i in searchTerms) {
+    let term = searchTerms[i]
+    const jsTweets = await twitterClient.readOnly.v2.search(term);
+    covidTweets[term] = jsTweets["_realData"].data
 
-  // Consume fetched tweet from first page of jsTweets
-  // for (const tweet of jsTweets) {
-  //   tweetArr.push(tweet.id)
-  // }
-  //   console.log(tweetArr)
+  }
+
+  res.status(200).header({ "Content-Type": "text/json" }).json(covidTweets)
+})
+
+app.get("/searchTweets/:searchTerm", async (req, res) => {
+  const searchTerm = req.params.searchTerm
+
+  // Instanciate with desired auth type (here's Bearer v2 auth)
+  const twitterClient = new TwitterApi(TWITTER_BEARER_TOKEN);
+  const jsTweets = await twitterClient.readOnly.v2.search(searchTerm, { 'language_code': 'en' });
 
   res.status(200).header({ "Content-Type": "text/json" }).json(jsTweets["_realData"].data)
 })
-
 
 
 // Default response for any other request
