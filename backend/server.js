@@ -7,7 +7,7 @@ const needle = require('needle');
 
 const app = express()
 const args = minimist(process.argv.slice(2))
-const port = args.port || 5000
+const port = args.port || 3000
 
 const config = require('./config.js')
 const { TwitterApi } = require('twitter-api-v2');
@@ -32,10 +32,10 @@ app.get("/", (req, res) => {
 
 
 app.get("/sentiment/:tweet", (req, res) => {
-    const tweet = req.params.tweet
-    const sentiment = new Sentiment();
-    const result = sentiment.analyze(tweet);
-    res.status(200).header({ "Content-Type": "text/json" }).json({ tweet: tweet, sentiment: result })
+  const tweet = req.params.tweet
+  const sentiment = new Sentiment();
+  const result = sentiment.analyze(tweet);
+  res.status(200).header({ "Content-Type": "text/json" }).json({ tweet: tweet, sentiment: result })
 })
 
 app.get("/toptweets/", async (req, res) => {
@@ -44,7 +44,7 @@ app.get("/toptweets/", async (req, res) => {
 
   // let query = 'from:twitterapi since:2011-06-20 until:2011-06-20'
   const jsTweets = await twitterClient.readOnly.v2.search('covid');
-  
+
 
 
   // Consume fetched tweet from first page of jsTweets
@@ -53,7 +53,7 @@ app.get("/toptweets/", async (req, res) => {
   // }
   //   console.log(tweetArr)
 
-    res.status(200).header({ "Content-Type": "text/json" }).json(jsTweets["_realData"].data)
+  res.status(200).header({ "Content-Type": "text/json" }).json(jsTweets["_realData"].data)
 })
 
 
