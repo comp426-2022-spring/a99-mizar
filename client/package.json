@@ -1,26 +1,13 @@
 {
-  "name": "a99-mizar",
-  "description": "Client.",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "client",
+  "version": "0.1.0",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/comp426-2022-spring/a99-mizar.git"
-  },
-  "author": "Group - mizar",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/comp426-2022-spring/a99-mizar/issues"
-  },
-  "homepage": "https://github.com/comp426-2022-spring/a99-mizar#readme",
   "dependencies": {
     "cra-template": "1.1.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
-    "react-twitter-embed": "^4.0.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
