@@ -50,7 +50,8 @@ app.get("/allCovidTweets/", async (req, res) => {
 
   for (let i in searchTerms) {
     let term = searchTerms[i]
-    const jsTweets = await twitterClient.readOnly.v2.search(term);
+    const jsTweets = await twitterClient.readOnly.v2.search(`${term} lang:en`);
+    console.log(jsTweets)
     covidTweets[term] = jsTweets["_realData"].data
 
   }
@@ -63,7 +64,7 @@ app.get("/searchTweets/:searchTerm", async (req, res) => {
 
   // Instanciate with desired auth type (here's Bearer v2 auth)
   const twitterClient = new TwitterApi(TWITTER_BEARER_TOKEN);
-  const jsTweets = await twitterClient.readOnly.v2.search(searchTerm, { 'language_code': 'en' });
+  const jsTweets = await twitterClient.readOnly.v2.search(`${searchTerm} lang:en`);
 
   res.status(200).header({ "Content-Type": "text/json" }).json(jsTweets["_realData"].data)
 })
