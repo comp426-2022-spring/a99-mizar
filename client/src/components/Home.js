@@ -1,4 +1,5 @@
 // import { TwitterTweetEmbed } from 'react-twitter-embed'
+import ValenceScoreChecker from './ValenceScoreChecker.js';
 import Nav from './common/Nav';
 import '../css/Home.css';
 
@@ -22,6 +23,7 @@ const Home = () => {
           on the Resources page, or take a look at how happy or sad recent tweets have been on average on the Sentiment page!
         </h3>
       </div>
+      <ValenceScoreChecker />
     </div>
   );
 }

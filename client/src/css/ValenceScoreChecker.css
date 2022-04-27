@@ -1,0 +1,24 @@
+.ValenceInput {
+  text-align: center;
+  font-size: 1.5rem;
+  height: 3rem;
+  margin: 1rem;
+  width: 50%;
+}
+
+.ValenceButton {
+  margin: 1rem;
+  padding: 1rem 6rem;
+  border: 10px;
+}
+
+.ValenceButton:hover {
+  transform: scale(1.1);
+  color: blue;
+}
+
+.Error {
+  width: 20%;
+  color: red;
+  margin: auto;
+}
