@@ -1,17 +1,14 @@
 .NavContainer {
   background-color: #E9E9E9;
-  height: 15vh;
+  height: 10vh;
   width: 100%;
 }
 
 .Nav {
-  font-size: calc(10px + 2vmin);
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
 
 .NavItem {
-  color: #2E3E61;
   padding: 2rem;
 }
