@@ -1,7 +1,7 @@
 // import { TwitterTweetEmbed } from 'react-twitter-embed'
 import ValenceScoreChecker from './ValenceScoreChecker.js';
 import Nav from './common/Nav';
-import '../css/Home.css';
+import '../css/Page.css';
 
 const Home = () => {
   return ( 

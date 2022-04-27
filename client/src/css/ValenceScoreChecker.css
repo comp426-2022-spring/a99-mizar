@@ -7,14 +7,16 @@
 }
 
 .ValenceButton {
+  background-color: #20C1BF;
+  padding: 1.5rem 8rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
   margin: 1rem;
-  padding: 1rem 6rem;
   border: 10px;
 }
 
 .ValenceButton:hover {
   transform: scale(1.1);
-  color: blue;
 }
 
 .Error {

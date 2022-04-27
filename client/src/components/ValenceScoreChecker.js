@@ -13,8 +13,9 @@ const ValenceScoreChecker = () => {
 
     setErrorMsg('');
 
-    // sent to API, bring back response
-    // based on the valence score that's returned from the API, display a happy or sad face and short description
+    // TODO: send to API, bring back response
+    
+    // TODO: based on the valence score that's returned from the API, display a happy or sad face and short description
   }
 
   return (
