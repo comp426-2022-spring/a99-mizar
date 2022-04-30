@@ -11,17 +11,15 @@ const ValenceScoreChecker = () => {
 
   async function handleValenceSubmission() {
     setValenceScore('');
+    setErrorMsg('');
+
     const tweet = document.getElementById('valenceInput').value;
     if (!tweet) {
       setErrorMsg('Please enter text to check valence');
       return;
     }
 
-    setErrorMsg('');
-
     const score = await getSentiment(tweet);
-
-    // TODO: based on the valence score that's returned from the API, display a happy or sad face and short description
     setValenceScore(score);
   }
 

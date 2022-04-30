@@ -31,7 +31,6 @@ app.get("/", (req, res) => {
   res.end(`${res.statusCode} ${res.statusMessage}`)
 })
 
-
 app.get("/sentiment/:tweet", (req, res) => {
   const tweet = req.params.tweet
   const sentiment = new Sentiment();
@@ -46,13 +45,11 @@ app.get("/allCovidTweets/", async (req, res) => {
   const searchTerms = ["COVID", "COVID-19", "virus", "outbreak", "pandemic", "quarantine", "symptom", "spread", "social distancing", "vaccine", "immunity", "case", "contagious", "infectious"]
   const covidTweets = {}
 
-
   for (let i in searchTerms) {
     let term = searchTerms[i]
     const jsTweets = await twitterClient.readOnly.v2.search(`${term} lang:en`);
     console.log(jsTweets)
     covidTweets[term] = jsTweets["_realData"].data
-
   }
 
   res.status(200).header({ "Content-Type": "text/json" }).json(covidTweets)
