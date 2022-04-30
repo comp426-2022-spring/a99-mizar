@@ -19,6 +19,13 @@
   transform: scale(1.1);
 }
 
+.ScoreImg {
+  height: 100px;
+  width: 100px;
+  background: 2px solid red;
+  margin-bottom: 5rem;
+}
+
 .Error {
   width: 20%;
   color: red;

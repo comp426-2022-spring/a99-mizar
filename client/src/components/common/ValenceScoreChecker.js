@@ -1,4 +1,7 @@
 import { getSentiment } from '../../api/api.js';
+import neutral from './images/neutral.png';
+import happy from './images/happy.png';
+import sad from './images/sad.jpg';
 import '../../css/ValenceScoreChecker.css';
 import { useState } from 'react';
 
@@ -22,6 +25,16 @@ const ValenceScoreChecker = () => {
     setValenceScore(score);
   }
 
+  function processValenceScore() {
+    if (valenceScore >= 2) {
+      return <div><img className="ScoreImg" alt ='HappyFace' src={happy} /></div>;
+    } else if (valenceScore <= -2) {
+      return <div><img className="ScoreImg" alt='SadFace' src={sad} /></div>;
+    } else {
+      return <div><img className="ScoreImg" alt='NeutralFace' src={neutral} /></div>
+    }
+  }
+
   return (
     <div>
       <div>
@@ -38,7 +51,9 @@ const ValenceScoreChecker = () => {
         Check Valence
       </button>
       <div className="Error">{errorMsg}</div>
-      <div className="Score">{`Valence: ` + valenceScore}</div>
+      <div className="Score">
+        {valenceScore ? processValenceScore() : ''}
+      </div>
     </div>
   );
 }
