@@ -1,19 +1,19 @@
 const express = require("express")
 const minimist = require("minimist")
 const Sentiment = require('sentiment');
+const cors = require('cors');
 
 const needle = require('needle');
 
-
 const app = express()
+app.use(cors())
 const args = minimist(process.argv.slice(2))
-const port = args.port || 3000
+const port = args.port || 5000
 
 const config = require('./config.js')
 const { TwitterApi } = require('twitter-api-v2');
 const { TWITTER_BEARER_TOKEN, appKey, appSecret, TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_SECRET } = require("./config.js");
 const { query } = require("express");
-
 
 const server = app.listen(port, () => {
   console.log(`App is running on ${port}`)
@@ -22,7 +22,6 @@ const server = app.listen(port, () => {
 app.set('json spaces', 2)
 
 app.get("/", (req, res) => {
-  console.log("hello")
   // Respond with status 200
   res.statusCode = 200
 
@@ -68,7 +67,6 @@ app.get("/searchTweets/:searchTerm", async (req, res) => {
 
   res.status(200).header({ "Content-Type": "text/json" }).json(jsTweets["_realData"].data)
 })
-
 
 // Default response for any other request
 // This must be at the end
