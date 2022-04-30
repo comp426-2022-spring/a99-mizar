@@ -21,9 +21,6 @@ const Resources = () => {
           <a className='' href='http://treatment.adaa.org/'>Anxiety and Depression Association of America: Find a Therapist</a>, 
           <a className='' href='https://itunes.apple.com/us/app/breathe2relax/id425720246?mt=8'>Breath2Relax is a free portable stress management tool</a>, 
           <a className='' href='http://www.allianceofhope.org/'>Alliance of Hope for Suicide Loss Survivors</a>
-
-
-          
           }
       </div>
     </div>
