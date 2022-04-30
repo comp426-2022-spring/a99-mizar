@@ -5,8 +5,38 @@
 .TextContainer {
   margin: 2rem auto;
   width: 80%;
+  margin-bottom: 0;
 }
 
 .Description {
   text-align: left;
+}
+
+.list {
+  list-style: none;
+  margin-bottom: 0;
+  padding-bottom: 20px;
+}
+
+/* .LinkContainer {
+  margin-bottom: 20px;
+
+} */
+
+/* .LinkContainer:hover {
+  background-color: #E9E9E9;
+} */
+
+.link {
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 2rem;
+  border-radius: 1rem;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.link:hover {
+  background-color: #E9E9E9;
 }

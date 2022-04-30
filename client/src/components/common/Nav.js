@@ -9,7 +9,11 @@ const linkStyle = {
 
 const Nav = () => {
   return (
+    
     <div className='NavContainer'>
+      <div className='MainTitleContainer'>
+        <h1 className='MainTitle'>Mizar Mental Health</h1>
+      </div>
       <nav className='Nav'>
         <span className='NavItem'>
           <NavLink style={linkStyle} to='/'>Home</NavLink>

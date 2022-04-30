@@ -1,13 +1,39 @@
+.MainTitleContainer {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-family: 'Oleo Script', cursive;
+  font-size: 3vw;}
+
+.MainTitle {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  
+}
+
 .NavContainer {
   background-color: #E9E9E9;
-  height: 7vh;
+  /* height: 7vh; */
   width: 100%;
+  /* padding-top: 30px; */
+  padding-bottom: 30px;
+
 }
 
 .Nav {
   font-size: 1.5rem;
+
 }
 
 .NavItem {
-  padding: 2rem;
+  margin: 2rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: solid 5px #E9E9E9;
+  transition: 0.3s;
+}
+
+.NavItem:hover {
+  border-color: #20C1BF;
 }
