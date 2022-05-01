@@ -10,3 +10,11 @@
 .Description {
   text-align: left;
 }
+
+.TweetsContainer {
+  margin: 0 auto;
+}
+
+.Center {
+  margin-left: 40%;
+}

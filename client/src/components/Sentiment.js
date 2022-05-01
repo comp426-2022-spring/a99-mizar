@@ -1,25 +1,31 @@
 import { /* getSentiment,*/ getTweetsBySearchTerm } from '../api/api.js';
 // import { processValenceScore } from '../utils/valence.js';
 import { TwitterTweetEmbed } from 'react-twitter-embed'
+import ReactLoading from 'react-loading';
 import Nav from './common/Nav.js';
 import { useState } from 'react';
 import '../css/Page.css';
 
 const Sentiment = () => {
   const [errorMsg, setErrorMsg] = useState('');
-  const [tweets, setTweets] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [tweets, setTweets] = useState(<div></div>);
 
   async function handleTweetSearch() {
     setErrorMsg('');
+    setLoading(true);
     const searchTerm = document.getElementById('twitterinput').value;
     if (!searchTerm) {
       setErrorMsg('Please enter text to search Twitter and see valence');
+      setLoading(false);
       return;
     }
 
     // get 10 tweets from Twitter based on the search term
     const tweetResults = await getTweetsBySearchTerm(searchTerm);
-    setTweets(tweetResults);
+    const tweetComponents = tweetResults.map((tweet) => {return <TwitterTweetEmbed key={tweet.id} tweetId={tweet.id} />});
+    setLoading(false);
+    setTweets(tweetComponents);
   }
 
   /*
@@ -68,7 +74,8 @@ const Sentiment = () => {
       </div> */}
 
       <div className='TweetsContainer'>
-        {tweets.map((tweet) => {return <div key={tweet.id}><TwitterTweetEmbed tweetId={tweet.id} /></div>})}
+        {loading ? <div className='Center'><ReactLoading height={100} width={200} /></div> : ''}
+        {tweets}
       </div>
 
     </div>
