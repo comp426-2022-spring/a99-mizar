@@ -18,8 +18,9 @@
 
 .Center {
   margin-left: 40%;
+}
 
-  .list {
+.list {
   list-style: none;
   margin-bottom: 0;
   padding-bottom: 20px;
