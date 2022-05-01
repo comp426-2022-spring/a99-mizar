@@ -10,6 +10,7 @@ export async function getSentiment(tweet) {
   return res.data.sentiment.score;
 }
 
-export async function getCOVIDTweets() {
-  
+export async function getTweetsBySearchTerm(term) {
+  const res = await axios.get(API_HOST + 'searchTweets/' + term);
+  return res.data;
 }
