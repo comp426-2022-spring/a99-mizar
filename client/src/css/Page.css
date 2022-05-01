@@ -12,7 +12,14 @@
   text-align: left;
 }
 
-.list {
+.TweetsContainer {
+  margin: 0 auto;
+}
+
+.Center {
+  margin-left: 40%;
+
+  .list {
   list-style: none;
   margin-bottom: 0;
   padding-bottom: 20px;
