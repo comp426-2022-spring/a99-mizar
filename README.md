@@ -2,7 +2,7 @@
 
 This is the COMP 426 final project for Team Mizar. We built a simple website that checks valence scores of user-entered text. We also use the Twitter API to find tweets based on a search term and then calculate average valence score in order to see the sentiment around certain search terms.
 
-## DEMO VIDEO LINK: ______
+## DEMO VIDEO LINK: https://youtu.be/sAP9MXorG4M
 
 For information about our frontend views, API endpoints, and the planning process our team went through for this project, check out the `/docs/` folder!
 
